@@ -1,0 +1,103 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "name": "Job Listing API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/jobs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobs"]
+        }
+      }
+    },
+    {
+      "name": "Add New Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Frontend Developer\",\n  \"company\": \"WebTech\",\n  \"location\": \"Remote\",\n  \"description\": \"Work with React and Tailwind CSS to build UI.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/jobs",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobs"]
+        }
+      }
+    },
+    {
+      "name": "Update Job",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Senior Frontend Developer\",\n  \"description\": \"Update to include advanced React.js skills.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/jobs/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobs", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Delete Job",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/jobs/:id",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobs", ":id"]
+        }
+      }
+    },
+    {
+      "name": "Search Jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/jobs/search?query=React",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "jobs", "search"],
+          "query": [
+            {
+              "key": "query",
+              "value": "React"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
