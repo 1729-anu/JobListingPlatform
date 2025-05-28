@@ -1,0 +1,20 @@
+import React, { useState } from 'react';
+import { searchJobs } from '../api';
+
+const SearchBar = ({ setJobs }) => {
+  const [query, setQuery] = useState('');
+
+  const handleSearch = async () => {
+    const { data } = await searchJobs(query);
+    setJobs(data);
+  };
+
+  return (
+    <div>
+      <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search jobs..." />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+};
+
+export default SearchBar;
